@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Never miss another call - BuildSimpleFast</title>
-<meta name="description" content="The AI receptionist for service businesses. Catches every call, books appointments, and texts you a summary - 24/7, for less than the cost of a part-time hire." />
+<title>Replace your next sales hire - BuildSimpleFast</title>
+<meta name="description" content="A prebuilt AI sales system built specifically for B2B operators hiring sales reps. Qualifies every inbound lead, books the demo, recovers stalled threads - 24/7, for less than a hire." />
 <meta name="robots" content="noindex,nofollow" />
 <style>
   :root {
@@ -219,27 +219,27 @@
 <header class="site">
   <div class="wrap">
     <div class="brand"><span class="dot"></span>Automated Operator</div>
-    <span class="pill">For service business owners</span>
+    <span class="pill">Built for <span data-company>your team</span></span>
   </div>
 </header>
 <!-- HERO -->
 <section class="hero">
   <div class="glow"></div>
   <div class="wrap" style="position: relative; z-index: 1;">
-    <div class="eyebrow">Built for <span data-company>your team</span></div>
+    <div class="eyebrow">Personal walkthrough for <span data-company>your team</span></div>
     <h1>
       <span class="name" data-name>there</span>, here's how
-      <span class="company" data-company>your company</span> can stop losing money to missed calls - without hiring a receptionist.
+      <span class="company" data-company>your company</span> can replace its next sales hire - without losing pipeline.
     </h1>
     <p class="sub">
-      After-hours calls. Weekend emergencies. The leads that ring twice and hang up. Right now <span data-company>your company</span> is paying for every one of them in lost jobs. Watch this 3-min walkthrough - you'll see the exact AI receptionist that picks up every call, books the appointment, and texts you a summary. Works 24/7 for less than a part-time hire.
+      I saw <span data-company>your company</span> is hiring sales reps. So I built this for <span data-company>your company</span> specifically. Watch the 3-min walkthrough below - it's the exact AI system that would replace your next $60K+ hire by qualifying every inbound lead, booking the demo, and recovering stalled threads. 24/7. No ramp, no benefits, no quota miss.
     </p>
     <div class="video">
       <!-- SWAP: replace the placeholder div with the real Loom embed iframe below -->
       <!-- <iframe src="https://www.loom.com/embed/REPLACE_WITH_LOOM_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
       <div class="placeholder">
         <div class="play"></div>
-        <div style="font-size:14px;">Loom walkthrough - swap embed here</div>
+        <div style="font-size:14px;">Personal walkthrough for <span data-company>your team</span> - swap embed here</div>
       </div>
     </div>
   </div>
@@ -247,34 +247,34 @@
 <!-- COST MATH -->
 <section>
   <div class="wrap">
-    <h2>Every missed call is a paying customer your competitor gets.</h2>
+    <h2>The math doesn't work anymore.</h2>
     <p class="lead">
-      Service businesses miss roughly 27% of inbound calls. After 5pm, weekends, holidays - the phone keeps ringing but nobody's picking up. Most of those callers don't leave a voicemail. They call the next name on Google.
+      A new sales rep costs <span data-company>your company</span> cash before they ever book a meeting. The system I built for <span data-company>your company</span> books meetings the day it goes live - and works every weekend, every holiday, every 3am inbound lead.
     </p>
     <div class="compare">
       <div class="col bad">
-        <h3>Missing calls every day</h3>
-        <div class="big">~$5,000/mo lost</div>
+        <h3>Hiring another sales rep</h3>
+        <div class="big">~$94,000/yr</div>
         <ul>
-          <li><span class="mark">×</span><span><strong>27% of inbound calls</strong> go unanswered (industry avg)</span></li>
-          <li><span class="mark">×</span><span><strong>After 5pm &amp; weekends</strong> = closed for business</span></li>
-          <li><span class="mark">×</span><span><strong>Voicemails get ignored</strong> by callers, not returned</span></li>
-          <li><span class="mark">×</span><span>No record of who called, when, or why</span></li>
-          <li><span class="mark">×</span><span>Every missed lead = competitor's customer</span></li>
+          <li><span class="mark">×</span><span><strong>$60K+ base</strong> + benefits, taxes, tools, equipment</span></li>
+          <li><span class="mark">×</span><span><strong>60–90 days</strong> to ramp before quota</span></li>
+          <li><span class="mark">×</span><span><strong>8 hours/day</strong>, sleeps through inbound after hours</span></li>
+          <li><span class="mark">×</span><span><strong>~18 month avg tenure</strong> - rehire, retrain, repeat</span></li>
+          <li><span class="mark">×</span><span>Misses follow-ups, drops threads, forgets context</span></li>
         </ul>
-        <div class="footnote">Source: small business call studies. At $400 avg job × 12 missed leads/mo = $4,800+ lost monthly.</div>
+        <div class="footnote">Source: typical fully-loaded sales rep cost in B2B.</div>
       </div>
       <div class="col good">
-        <h3>The Phone Vault</h3>
+        <h3>The Inbound Closer</h3>
         <div class="big">$2,500 once + $297/mo</div>
         <ul>
-          <li><span class="mark">✓</span><span><strong>24/7 pickup</strong> - every call, every hour, every day</span></li>
-          <li><span class="mark">✓</span><span><strong>Trained on your business</strong> - services, pricing, tone</span></li>
-          <li><span class="mark">✓</span><span><strong>Books appointments</strong> directly into your existing calendar</span></li>
-          <li><span class="mark">✓</span><span><strong>10-day install</strong>, real-time SMS summaries, never sleeps</span></li>
-          <li><span class="mark">✓</span><span><strong>Guarantee:</strong> 10+ qualified leads in 30 days or no charge month 2</span></li>
+          <li><span class="mark">✓</span><span><strong>Inbound qualification</strong> 24/7 - every form, email, DM answered in &lt; 60 seconds</span></li>
+          <li><span class="mark">✓</span><span><strong>Demos booked</strong> straight into your existing calendar</span></li>
+          <li><span class="mark">✓</span><span><strong>Stalled-lead recovery</strong> - threads that ghost get re-engaged on a timer</span></li>
+          <li><span class="mark">✓</span><span><strong>10-day install</strong>, 90-day support, guarantee included</span></li>
+          <li><span class="mark">✓</span><span>Lives inside your existing CRM (Salesforce, HubSpot, etc.)</span></li>
         </ul>
-        <div class="footnote">Standard pricing. Annual: $5,500/yr (save $464).</div>
+        <div class="footnote">Standard pricing for <span data-company>your team</span>. Annual: $5,500/yr (save $464).</div>
       </div>
     </div>
   </div>
@@ -282,25 +282,25 @@
 <!-- WHAT'S INSIDE -->
 <section>
   <div class="wrap">
-    <h2>What gets installed at <span class="accent" data-company>your company</span>.</h2>
+    <h2>What I'd install at <span class="accent" data-company>your company</span>.</h2>
     <p class="lead">
-      Three jobs your phone is supposed to do but doesn't. One AI receptionist that does all three on day one.
+      Three jobs your next sales hire would do. One system that does all three on day one - and never asks for a raise, never misses a follow-up, never sleeps.
     </p>
     <div class="grid3">
       <div class="feat">
         <div class="ico">1</div>
-        <h4>24/7 Pickup</h4>
-        <p>Every after-hours call, weekend ring, and holiday emergency picked up within 2 rings. Trained on your services, your pricing, your tone.</p>
+        <h4>Inbound Qualifier</h4>
+        <p>Every form fill, email, and DM gets a contextual reply within 60 seconds - qualified against <span data-company>your team</span>'s ICP, routed, and logged in your CRM.</p>
       </div>
       <div class="feat">
         <div class="ico">2</div>
-        <h4>Auto-Booking</h4>
-        <p>Books appointments directly into your existing calendar (Google, Outlook, Calendly). Captures name, number, service needed, urgency.</p>
+        <h4>Demo Booker</h4>
+        <p>Qualified leads get demos booked straight into your existing calendar. Calendar links, time-zone math, reschedule logic - all handled.</p>
       </div>
       <div class="feat">
         <div class="ico">3</div>
-        <h4>Real-Time SMS</h4>
-        <p>Every call summary lands on your phone within 60 seconds. Caller, reason, urgency, action required. No more guessing what voicemails said.</p>
+        <h4>Stalled Lead Recovery</h4>
+        <p>Threads that go quiet get a contextual re-engagement on a timer. Not a generic bump - a real follow-up that references the prior conversation.</p>
       </div>
     </div>
   </div>
@@ -311,8 +311,8 @@
     <div class="download">
       <div class="meta">
         <div class="label">Free - yours to keep</div>
-        <h3>The Missed Call Killer skill</h3>
-        <p>The free Claude skill that gives <span data-company>your company</span> a working AI receptionist on one phone line. Drop it into Claude and start catching calls in 5 minutes. No strings, no opt-in, no upsell required.</p>
+        <h3>The Inbound Qualifier skill</h3>
+        <p>The free Claude skill I built into <span data-company>your company</span>'s system. Drop it in and start qualifying every inbound lead in 5 minutes. It's a working piece of The Inbound Closer - yours, no strings.</p>
       </div>
       <!-- SWAP: replace href with the real skill file URL or local file path -->
       <a class="btn" href="#" download>Download the free skill →</a>
@@ -323,12 +323,12 @@
 <section class="cta">
   <div class="glow"></div>
   <div class="wrap inner">
-    <h2>Want The Phone Vault installed at <span class="accent" data-company>your company</span>?</h2>
+    <h2>Want The Inbound Closer installed at <span class="accent" data-company>your company</span>?</h2>
     <p class="lead">
-      Live on your main business number in 10 days. AI receptionist trained on your business, integrated with your calendar, a summary text to your phone for every call. <strong>$2,500 setup + $297/mo.</strong> Guaranteed to catch 10+ qualified leads in 30 days or you don't pay for month two. Reply with one word - <span class="kbd">PLUG</span> - and I'll send the 10-min scoping form.
+      Live in <span data-company>your company</span>'s CRM in 10 days. AI that qualifies every inbound lead, books the demo, and recovers stalled threads - while you sleep. <strong>$2,500 setup + $297/mo.</strong> Guaranteed: 10+ qualified demos booked in 30 days or no charge for month two. Reply with one word - <span class="kbd">PLUG</span> - and I'll send the 10-min scoping form.
     </p>
     <div class="cta-actions">
-      <a class="btn" href="mailto:admin@buildsimplefast.com?subject=PLUG%20-%20Phone%20Vault%20scoping&body=Hey%20-%20PLUG.%20Send%20the%20scoping%20form.">Reply PLUG to start</a>
+      <a class="btn" href="mailto:admin@buildsimplefast.com?subject=PLUG%20-%20Inbound%20Closer%20scoping&body=Hey%20-%20PLUG.%20Send%20the%20scoping%20form.">Reply PLUG to start</a>
       <a class="btn ghost" href="mailto:admin@buildsimplefast.com">Or email me directly</a>
     </div>
     <div class="reply-hint">
@@ -365,7 +365,7 @@
     document.querySelectorAll('[data-company]').forEach(el => { el.textContent = company; });
     // Update title for browser tab + share previews
     if (rawCompany) {
-      document.title = company + ' - Never miss another call | Automated Operator';
+      document.title = company + ' - Replace your next sales hire | Automated Operator';
     }
   })();
 </script>
