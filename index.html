@@ -6,6 +6,12 @@
 <title>Replace your next sales hire - BuildSimpleFast</title>
 <meta name="description" content="A prebuilt AI sales system built specifically for B2B operators hiring sales reps. Qualifies every inbound lead, books the demo, recovers unclosed prospects - 24/7, for less than a hire." />
 <meta name="robots" content="noindex,nofollow" />
+<!-- Open Graph defaults; JS personalizes these per-prospect at runtime -->
+<meta property="og:type" content="website" />
+<meta property="og:title" id="ogTitle" content="Replace your next sales hire" />
+<meta property="og:description" id="ogDesc" content="A prebuilt AI sales system that qualifies every inbound lead, books the demo, and recovers unclosed prospects - 24/7." />
+<meta property="og:image" id="ogImage" content="" />
+<meta name="twitter:card" content="summary_large_image" />
 <style>
   :root {
     --bg: #0a0a0b;
@@ -82,7 +88,7 @@
     font-size: clamp(17px, 1.6vw, 19px); color: var(--text-dim);
     max-width: 720px; margin: 0 0 36px;
   }
-  /* LOOM */
+  /* HERO MEDIA (screenshot) */
   .video {
     position: relative; aspect-ratio: 16 / 9; width: 100%;
     border-radius: var(--radius); overflow: hidden;
@@ -90,6 +96,48 @@
     box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(96,165,250,0.06);
   }
   .video iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .screenshot-link {
+    position: absolute; inset: 0; display: block; line-height: 0;
+    background: #0e0f13;
+  }
+  .screenshot-link img {
+    width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center;
+    transition: transform .4s ease;
+  }
+  .screenshot-link:hover img { transform: scale(1.015); }
+  .screenshot-bar {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px;
+    font-size: 13px; color: var(--text);
+    background: linear-gradient(180deg, rgba(10,10,11,0.85) 0%, rgba(10,10,11,0.55) 70%, rgba(10,10,11,0) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+  }
+  .screenshot-bar .live-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--good);
+    box-shadow: 0 0 10px rgba(74,222,128,0.7);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(0.85); }
+  }
+  .screenshot-bar .domain { font-weight: 600; color: var(--text); }
+  .screenshot-bar .hint {
+    margin-left: auto; color: var(--text-dim); font-size: 12px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .screenshot-loading {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: var(--text-faint); font-size: 13px; letter-spacing: 0.04em;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(59,130,246,0.10), transparent 40%),
+      radial-gradient(circle at 70% 80%, rgba(96,165,250,0.08), transparent 40%),
+      #0e0f13;
+    z-index: 1;
+  }
   .video .placeholder {
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
     flex-direction: column; gap: 14px; color: var(--text-dim);
@@ -108,6 +156,7 @@
     border-top: 12px solid transparent; border-bottom: 12px solid transparent;
     border-left: 18px solid #fff; margin-left: 4px;
   }
+  [hidden] { display: none !important; }
   /* SECTIONS */
   section { padding: 64px 0; position: relative; }
   section + section { border-top: 1px solid var(--border-soft); }
@@ -211,6 +260,7 @@
     section { padding: 48px 0; }
     section.hero { padding: 56px 0 40px; }
     section.cta { padding: 64px 0; }
+    .screenshot-bar .hint { display: none; }
   }
 </style>
 </head>
@@ -232,14 +282,25 @@
       <span class="company" data-company>your company</span> can replace its next sales hire - without losing pipeline.
     </h1>
     <p class="sub">
-      I saw <span data-company>your company</span> is hiring sales reps. So I built this for <span data-company>your company</span> specifically. Watch the 3-min walkthrough below - it's the exact AI system that would replace your next $60K+ hire by qualifying every inbound lead, booking the demo, and recovering unclosed prospects. 24/7. No ramp, no benefits, no quota miss.
+      I saw <span data-company>your company</span> is hiring sales reps. So I built this for <span data-company>your company</span> specifically. Take a look below - it's the exact AI system that would replace your next $60K+ hire by qualifying every inbound lead, booking the demo, and recovering unclosed prospects. 24/7. No ramp, no benefits, no quota miss.
     </p>
     <div class="video">
-      <!-- SWAP: replace the placeholder div with the real Loom embed iframe below -->
-      <!-- <iframe src="https://www.loom.com/embed/REPLACE_WITH_LOOM_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-      <div class="placeholder">
+      <!-- Caption bar overlays the screenshot, top-left -->
+      <div class="screenshot-bar" id="screenshotBar" hidden>
+        <span class="live-dot"></span>
+        <span>Looking at <span class="domain" id="screenshotDomain"></span></span>
+        <span class="hint">Click to open ↗</span>
+      </div>
+      <!-- Loading state while the screenshot is fetched -->
+      <div class="screenshot-loading" id="screenshotLoading" hidden>Loading preview…</div>
+      <!-- Clickable screenshot, populated by JS when w param is valid -->
+      <a class="screenshot-link" id="screenshotLink" href="#" target="_blank" rel="noopener noreferrer" hidden>
+        <img id="screenshotImg" alt="" />
+      </a>
+      <!-- Default fallback placeholder: shown until screenshot loads, or if w is missing/malformed/fails -->
+      <div class="placeholder" id="screenshotPlaceholder">
         <div class="play"></div>
-        <div style="font-size:14px;">Personal walkthrough for <span data-company>your team</span> - swap embed here</div>
+        <div style="font-size:14px;">Personal walkthrough for <span data-company>your team</span></div>
       </div>
     </div>
   </div>
@@ -344,28 +405,103 @@
   </div>
 </footer>
 <script>
-  // URL-param personalization. Use ?n=FirstName&c=CompanyName
+  // ---------------------------------------------------------------
+  // Personalization: ?n=FirstName&c=Company&w=acme.com
+  // ---------------------------------------------------------------
   (function () {
-    const params = new URLSearchParams(window.location.search);
-    const rawName = (params.get('n') || params.get('name') || '').trim();
-    const rawCompany = (params.get('c') || params.get('company') || '').trim();
+    // thum.io auth token in <userId>-<urlKey> form (required — URL-key alone is rejected).
+    // Rotate by replacing this string; same value lives in prewarm.js / generate-urls.js.
+    var THUMIO_TOKEN = '77694-9c313b2f143e9181cad6c3212dd8b0ad';
+
+    var params = new URLSearchParams(window.location.search);
+    var rawName = (params.get('n') || params.get('name') || '').trim();
+    var rawCompany = (params.get('c') || params.get('company') || '').trim();
+    var rawWebsite = (params.get('w') || params.get('website') || '').trim();
+
     function cleanName(s) {
       if (!s) return '';
-      // Capitalize first letter of each word, conservative
-      return s.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      return s.split(/\s+/).map(function (w) {
+        return w.charAt(0).toUpperCase() + w.slice(1);
+      }).join(' ');
     }
     function cleanCompany(s) {
       if (!s) return '';
-      // Preserve casing as provided; just trim and decode
       return s.replace(/\+/g, ' ');
     }
-    const name = cleanName(rawName) || 'there';
-    const company = cleanCompany(rawCompany) || 'your company';
-    document.querySelectorAll('[data-name]').forEach(el => { el.textContent = name; });
-    document.querySelectorAll('[data-company]').forEach(el => { el.textContent = company; });
-    // Update title for browser tab + share previews
+    // Strip protocol/path/query, lowercase, validate against a basic domain regex.
+    // Returns null for empty or malformed input - the page should fall back to placeholder.
+    function sanitizeDomain(s) {
+      if (!s) return null;
+      var d = String(s).trim().toLowerCase();
+      d = d.replace(/^https?:\/\//, '');
+      d = d.replace(/^www\./, '');
+      d = d.split(/[\/?#]/)[0];
+      // Require at least one dot, allow a–z 0–9 - in labels
+      var ok = /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/.test(d);
+      return ok ? d : null;
+    }
+
+    var name = cleanName(rawName) || 'there';
+    var company = cleanCompany(rawCompany) || 'your company';
+    var domain = sanitizeDomain(rawWebsite);
+
+    // ---- Text personalization ----
+    document.querySelectorAll('[data-name]').forEach(function (el) { el.textContent = name; });
+    document.querySelectorAll('[data-company]').forEach(function (el) { el.textContent = company; });
+
     if (rawCompany) {
       document.title = company + ' - Replace your next sales hire | Automated Operator';
+    }
+
+    // ---- Screenshot hero ----
+    var bar = document.getElementById('screenshotBar');
+    var loading = document.getElementById('screenshotLoading');
+    var link = document.getElementById('screenshotLink');
+    var img = document.getElementById('screenshotImg');
+    var placeholder = document.getElementById('screenshotPlaceholder');
+    var domainEl = document.getElementById('screenshotDomain');
+
+    function showPlaceholder() {
+      bar.hidden = true;
+      loading.hidden = true;
+      link.hidden = true;
+      placeholder.hidden = false;
+    }
+
+    if (domain) {
+      var targetUrl = 'https://' + domain;
+      // thum.io: /get/auth/<TOKEN>/<options>/<URL>
+      // width/1600 for retina-friendly rendering, crop/900 to bias toward 16:9 (rendered as cover).
+      var shotUrl = 'https://image.thum.io/get/auth/' + THUMIO_TOKEN + '/width/1600/crop/900/png/' + targetUrl;
+
+      placeholder.hidden = true;
+      loading.hidden = false;
+      link.href = targetUrl;
+      img.alt = 'Screenshot of ' + domain;
+      domainEl.textContent = domain;
+
+      img.addEventListener('load', function () {
+        loading.hidden = true;
+        link.hidden = false;
+        bar.hidden = false;
+      });
+      img.addEventListener('error', function () {
+        // Screenshot failed (auth, DNS, blocked, etc.) - fall back gracefully.
+        showPlaceholder();
+      });
+      // Kick off the load
+      img.src = shotUrl;
+
+      // Personalize OG image + title so Slack/email link unfurls show this prospect's preview.
+      var ogTitle = document.getElementById('ogTitle');
+      var ogDesc = document.getElementById('ogDesc');
+      var ogImage = document.getElementById('ogImage');
+      if (ogTitle) ogTitle.setAttribute('content', company + ' - Replace your next sales hire');
+      if (ogDesc) ogDesc.setAttribute('content', 'A walkthrough I built for ' + company + ': AI that qualifies inbound, books demos, and recovers stalled leads.');
+      if (ogImage) ogImage.setAttribute('content', shotUrl);
+    } else {
+      // No (or malformed) w param - clean placeholder, no broken images.
+      showPlaceholder();
     }
   })();
 </script>
